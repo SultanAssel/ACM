@@ -1,0 +1,51 @@
+﻿class Solution {
+	
+
+	
+
+	   public double findMaxAverage(int[] nums, int k) {
+	
+
+	       double prefix[] = new double [nums.length];
+	
+
+	      
+	
+
+	       prefix[0] = nums[0];
+	
+
+	       for(int i = 1; i < k; i++)
+	
+
+	           prefix[i] = prefix[i - 1] + nums[i];
+	
+
+	      
+	
+
+	       double max = prefix[k - 1];
+	
+
+	      
+	
+
+	       for(int i = k; i < nums.length; i++){
+	
+
+	           prefix[i] = prefix[i - 1] + nums[i];
+	
+
+	           max = Math.max(max, prefix[i] - prefix[i - k]);
+	
+
+	       }
+	
+
+	       return max / k;
+	
+
+	   }
+	
+
+	}

@@ -1,0 +1,51 @@
+﻿class Solution {
+	
+
+	
+
+	   public int maxCoins(int[] piles) {
+	
+
+	       Arrays.sort(piles);
+	
+
+	      
+	
+
+	       int index = piles.length - 2;
+	
+
+	       int sum = 0;
+	
+
+	      
+	
+
+	       while(true) {
+	
+
+	           sum += piles[index];
+	
+
+	          
+	
+
+	           if(piles.length / 3 == index)
+	
+
+	              return sum;
+	
+
+	          
+	
+
+	           index -= 2;
+	
+
+	       }
+	
+
+	   }
+	
+
+	}
